@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block body %}
+<div  class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Modulation</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form  method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+    
+      <div class="card-body">
+        <input type="text" class="form-control" placeholder="{{book.book_title}}">
+        <input type="text" class="form-control" placeholder="{{book.description}}">
+        <input type="text" class="form-control" placeholder="{{book.authors_name}}">
+        <input type="text" class="form-control" placeholder="{{book.status}}">
+        <input type="text" class="form-control" placeholder="{{book.price}}">
+        <input type="text" class="form-control" placeholder="{{book.category}}">
+        <small id='totalrente' class="form-text text-muted"></small>
+      </div>
+    
+      <!-- /.card-body -->
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary">save</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}
+

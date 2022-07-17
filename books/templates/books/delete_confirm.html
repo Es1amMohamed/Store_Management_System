@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block body %}
+  <div style="direction: rtl;" class="wrapper">
+
+    <!-- Content Wrapper. Contains page content -->
+    <div   class="content-wrapper">
+      <!-- Content Header (Page header) -->
+  <div  class="card card-danger">
+      <div class="card-header">
+        <h3 class="card-title">The book has been deleted</h3>
+      </div>
+      <!-- /.card-header -->
+      <!-- form start -->
+      <div class="card-footer">
+        <button  type="submit" class="btn btn-success">
+          <a href="{% url 'books:book_list'  %}">Back</a>
+          </button>
+      </div>
+    </div>
+  </div>
+  </div>
+    
+{% endblock %}
