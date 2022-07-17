@@ -1,12 +1,20 @@
 from django.db import models
 
 # Create your models here.
+
+
+Status = (
+    ('Available' , 'Available'),
+    ('Unavailable' , 'Unavailable'),
+)
+    
+
 class Books(models.Model):
     book_title = models.CharField(max_length=50)
     description = models.TextField(max_length=100)
     authors_name = models.CharField(max_length=50)
-    status = models.BooleanField(default=True)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    status = models.CharField(max_length=50, choices=Status)
+    price = models.DecimalField(max_digits=5, decimal_places=1)
     published_at = models.DateField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     
