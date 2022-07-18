@@ -10,4 +10,5 @@ urlpatterns = [
     path('<str:slug>',views.book_update,name='book_update'),
     path('delete/<str:slug>',views.delete_book,name='delete_book'),
     path('confirm/<str:slug>',views.delete_confirm,name='delete_confirm'),
+    path('create/',views.book_create,name='book_create'),
 ]

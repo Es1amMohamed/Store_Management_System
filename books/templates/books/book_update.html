@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-
+{% load bootstrap4 %}
 {% block body %}
 <div  class="card card-primary">
     <div class="card-header">
@@ -9,14 +9,8 @@
     <!-- form start -->
     <form  method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-    
+      {% bootstrap_form form %}
       <div class="card-body">
-        <input type="text" class="form-control" placeholder="{{book.book_title}}">
-        <input type="text" class="form-control" placeholder="{{book.description}}">
-        <input type="text" class="form-control" placeholder="{{book.authors_name}}">
-        <input type="text" class="form-control" placeholder="{{book.status}}">
-        <input type="text" class="form-control" placeholder="{{book.price}}">
-        <input type="text" class="form-control" placeholder="{{book.category}}">
         <small id='totalrente' class="form-text text-muted"></small>
       </div>
     

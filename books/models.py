@@ -19,6 +19,7 @@ class Books(models.Model):
     published_at = models.DateField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     slug = models.SlugField(unique=True , blank=True, null=True)
+    picture = models.ImageField(upload_to='books/', blank=True, null=True)
     
     
     def save(self,*args,**kwargs):
