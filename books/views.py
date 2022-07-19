@@ -7,11 +7,22 @@ from .forms import *
 
 # Create your views here.
 def book_list(request):
-    
     books = Books.objects.all()
-    context = {'books': books}
+    category = Category.objects.all()
+    context = {'books': books , 'category': category}
+    if request.method == 'POST':
+        cat = request.POST.get('name')
+        if type(cat) == str and cat != '':
+            data = Category(category_name = cat)
+            data.save()
+            return redirect(reverse('books:book_list'))
+        else:
+            return redirect(reverse('books:book_list'))
+    else:
+        return render(request,'books/books_list.html', context)
     
-    return render(request,'books/books_list.html', context)
+    
+    
 
 def book_update(request ,slug):
     book = Books.objects.get(slug=slug)

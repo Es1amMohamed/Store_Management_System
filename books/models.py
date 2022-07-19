@@ -7,6 +7,9 @@ from django.utils.text import slugify
 Status = (
     ('Available' , 'Available'),
     ('Unavailable' , 'Unavailable'),
+    ('Sold' , 'Sold'),
+    ('Rented' , 'Rented'),
+    ('Borrowed' , 'Borrowed'),
 )
     
 
